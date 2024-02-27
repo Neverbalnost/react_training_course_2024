@@ -18,6 +18,7 @@ $brand-accent: coral;
     border: 0;
     padding: $base-padding / 2;
     margin: 0 $base-padding / 4 0 0;
+    cursor: pointer;
 
     &:hover {
       background: $brand-accent;
@@ -32,54 +33,21 @@ $brand-accent: coral;
     color: $brand-color_dark;
     padding: $base-padding / 2;
   }
-}
 
-.genre-menu {
-  list-style-type: none;
-  padding: 0;
+  .genre-menu {
+    list-style-type: none;
+    padding: 0;
 
-  .genre {
-    display: inline-block;
-    padding: $base-padding / 2;
-    margin: 0 $base-padding / 4 0 0;
-    background: $brand-color;
+    .genre {
+      display: inline-block;
+      margin: 0 $base-padding / 4 0 0;
 
-    a {
-      &:link,
-      &:active,
-      &:visited {
-        text-decoration: none;
-        color: $brand-color_dark;
-      }
-      a:hover {
+      &--chosen button {
+        font-weight: bold;
+        background: $brand-color_dark;
         color: $brand-color_light;
-      }
-    }
-
-    &:hover {
-      background: $brand-accent;
-      color: $brand-color_light;
-      a {
-        &:link,
-        &:active,
-        &:visited,
-        &:hover {
-          color: $brand-color_light;
-        }
-      }
-    }
-
-    &--chosen {
-      font-weight: bold;
-      background: $brand-color_dark;
-
-      a {
-        &:link,
-        &:active,
-        &:visited {
-          color: $brand-color_light;
-        }
       }
     }
   }
 }
+
