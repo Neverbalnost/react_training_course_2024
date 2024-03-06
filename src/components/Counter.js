@@ -13,18 +13,24 @@ export default function Counter(props) {
 
     const input = React.createElement(
         'input',
-        {type: 'number', 'data-testid': 'counter__input',  className: 'counter__input', value: value, key: 'Input', onChange: (e) => setValue(parseInt(e.target.value))},
+        {type: 'number', 'data-testid': 'counter__input',  className: 'counter__input', value: value, key: 'Input',
+            onChange: (e) => {
+                if (typeof parseInt(e.target.value) == 'number') {
+                    setValue(parseInt(e.target.value));
+                }
+            }
+        },
 
     );
     const incButton = React.createElement(
         'button',
-        {className: 'counter__button--inc', onClick: increment, key: 'Plus'},
+        {'data-testid': 'counter__plus', className: 'counter__button--inc', onClick: increment, key: 'Plus'},
         '+'
     );
 
     const decButton = React.createElement(
         'button',
-        {className: 'counter__button--dec', onClick: decrement, key: 'Minus'},
+        {'data-testid': 'counter__minus', className: 'counter__button--dec', onClick: decrement, key: 'Minus'},
         '-'
     );
 

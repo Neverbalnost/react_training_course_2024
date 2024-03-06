@@ -46,6 +46,10 @@ $brand-accent: coral;
         font-weight: bold;
         background: $brand-color_dark;
         color: $brand-color_light;
+
+        &:hover {
+          background: $brand-accent;
+        }
       }
     }
   }
