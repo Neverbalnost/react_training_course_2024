@@ -15,7 +15,7 @@ export default function Counter(props) {
         'input',
         {type: 'number', 'data-testid': 'counter__input',  className: 'counter__input', value: value, key: 'Input',
             onChange: (e) => {
-                if (typeof parseInt(e.target.value) == 'number') {
+                if (parseInt(e.target.value, 10)) {
                     setValue(parseInt(e.target.value));
                 }
             }
