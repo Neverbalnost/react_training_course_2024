@@ -10,6 +10,15 @@ describe('Counter tests', () => {
         render(<Counter value={0}></Counter>);
         expect(screen.getByTestId('counter__input').value).toBe('0');
     });
+    test('Counter value is 0 when typing 0 in an input', () => {
+        render(<Counter value={0}></Counter>);
+        const counterInput = screen.getByTestId('counter__input');
+        act(() => {
+            userEvent.clear(counterInput);
+            userEvent.type(counterInput, '0');
+        });
+        expect(counterInput.value).toBe('0');
+    });
     test('Counter value is changed when typing in an input', () => {
         render(<Counter value={0}></Counter>);
         const counterInput = screen.getByTestId('counter__input');
