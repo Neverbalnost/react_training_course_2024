@@ -4,26 +4,31 @@ export default function Counter(props) {
     const [value, setValue] = useState(props.value);
 
     function increment() {
-        setValue(value + 1);
+        setValue(Number(value + 1));
     }
 
     function decrement() {
-        setValue(value - 1);
+        setValue(Number(value - 1));
     }
 
     const input = React.createElement(
         'input',
-        {type: 'number', className: 'counter__input', value: value, key: 'Input', onChange: (e) => setValue(parseInt(e.target.value))},
+        {type: 'number', 'data-testid': 'counter__input',  className: 'counter__input', value: value, key: 'Input',
+            onChange: (e) => {
+                setValue(e.target.value);
+            }
+        },
+
     );
     const incButton = React.createElement(
         'button',
-        {className: 'counter__button--inc', onClick: increment, key: 'Plus'},
+        {'data-testid': 'counter__plus', className: 'counter__button--inc', onClick: increment, key: 'Plus'},
         '+'
     );
 
     const decButton = React.createElement(
         'button',
-        {className: 'counter__button--dec', onClick: decrement, key: 'Minus'},
+        {'data-testid': 'counter__minus', className: 'counter__button--dec', onClick: decrement, key: 'Minus'},
         '-'
     );
 
