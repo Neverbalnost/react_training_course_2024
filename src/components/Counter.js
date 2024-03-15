@@ -4,11 +4,11 @@ export default function Counter(props) {
     const [value, setValue] = useState(props.value);
 
     function increment() {
-        setValue(value + 1);
+        setValue(Number(value + 1));
     }
 
     function decrement() {
-        setValue(value - 1);
+        setValue(Number(value - 1));
     }
 
     const input = React.createElement(
